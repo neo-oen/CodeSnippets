@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myCancelMemory</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>//清除缓存内容
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+
+    // 移除所有的下载操作缓存
+    [self.&lt;#queue#&gt; cancelAllOperations];
+    [self.&lt;#operations#&gt; removeAllObjects];
+    // 移除所有的图片缓存
+    [self.&lt;#images#&gt; removeAllObjects];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>4B77DB7F-771C-4099-9F71-E51E322D3FAE</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>清除缓存内容</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>cancelMemory</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

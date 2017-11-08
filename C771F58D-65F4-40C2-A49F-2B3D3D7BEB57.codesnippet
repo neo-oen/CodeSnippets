@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myOperation</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    NSOperationQueue * &lt;#queue#&gt; = [[NSOperationQueue alloc]init];
+//设置最大并发数
+ &lt;#queue#&gt; setMaxConcurrentOperationCount:&lt;#5#&gt;
+//两步添加的队列
+    NSBlockOperation * &lt;#operation#&gt; = [NSBlockOperation blockOperationWithBlock:^{
+        
+    }];
+
+    [&lt;#queue#&gt; addOperation:&lt;#operation#&gt;];
+
+//直接添加到队列
+[self.queue addOperationWithBlock:^{
+    
+}];
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C771F58D-65F4-40C2-A49F-2B3D3D7BEB57</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Operation 基础用法</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

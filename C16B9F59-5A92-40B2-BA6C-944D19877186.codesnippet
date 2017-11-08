@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myDescription</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>- (NSString *)description
+{
+    return [NSString stringWithFormat:@"&lt;%@: %p&gt; {&lt;#property1#&gt;: %@, &lt;#property2#&gt;: %@, &lt;#property3#&gt;: %@, &lt;#property4#&gt;: %@}", self.class, self, self.&lt;#property1#&gt;, self.&lt;#property2#&gt;, self.&lt;#property3#&gt;, self.&lt;#property4#&gt;];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>C16B9F59-5A92-40B2-BA6C-944D19877186</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>模型打印函数</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

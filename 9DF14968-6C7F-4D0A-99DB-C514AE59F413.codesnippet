@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>#import "&lt;#Option#&gt;Model.h"
+#import "Public.h"
+
+typedef NS_ENUM(NSInteger, UI&lt;#Name#&gt;ViewStyle) {
+    UI&lt;#Name#&gt;ViewStyleDefault,
+    UI&lt;#Name#&gt;ViewStyle&lt;#Text#&gt;
+};
+
+
+typedef &lt;#void#&gt; (^&lt;#AnswerClick#&gt;Action)(&lt;#NSString * str#&gt;);
+
+@interface &lt;#Answer#&gt;View : UIView
+
+@property(nonatomic,copy)&lt;#AnswerClick#&gt;Action &lt;#answer#&gt;CA ;//向view类外，索要非本类的工作的接口
+@property(nonatomic,strong)&lt;#Option#&gt;Model * model;//向本类输入资源的接口
+@property(nonatomic,strong)NSArray * &lt;#models#&gt;;//向本类输入资源的接口
+//资源是model的时候
++ (&lt;#Option#&gt;View *)&lt;#Option#&gt;WithFrame:(CGRect)frame updateWithModel:(&lt;#Option#&gt;Model *)model;//初始化视图的方法
+- (void)update&lt;#Option#&gt;ViewWithModel:(&lt;#Option#&gt;Model *)model;//加载资源
+//资源是nsarray的时候
++ (&lt;#Option#&gt;View *)&lt;#Option#&gt;WithFrame:(CGRect)frame updateWithModel:(NSArray *)models;//初始化视图的方法
+- (void)update&lt;#Option#&gt;ViewWithModel:(NSArray *)models;//加载资源
+
+-(BOOL)add&lt;#AanswerButtonName#&gt;:(NSString *) title;//视图的输入接口，通过她来调用视图的某些功能
+
+@end
+
+@interface &lt;#Answer#&gt;View()
+
+
+@end
+
+@implementation &lt;#Answer#&gt;View
+
+#pragma mark - ============== 懒加载 ==============
+#pragma mark - ============== 初始化 ==============
+
+/**
+ 初始化view
+ */
++ (&lt;#Option#&gt;View *)&lt;#Option#&gt;WithFrame:(CGRect)frame updateWithModel:(&lt;#Option#&gt;Model *)model{
+    
+    &lt;#Option#&gt;View * &lt;#Option#&gt;View = [[self alloc]initWithFrame:frame];
+    [&lt;#Option#&gt;View update&lt;#Option#&gt;ViewWith:model];
+    return &lt;#Option#&gt;View;
+}
++ (&lt;#Option#&gt;View *)&lt;#Option#&gt;WithFrame:(CGRect)frame updateWithModel:(NSArray *)models{
+    
+    &lt;#Option#&gt;View * &lt;#Option#&gt;View = [[self alloc]initWithFrame:frame];
+    [&lt;#Option#&gt;View update&lt;#Option#&gt;ViewWith:models];
+    return &lt;#Option#&gt;View;
+}
+
+#pragma mark - ============== 更新视图 ==============
+/**
+ 根据资源，更新View
+ 
+ @param model 资源
+ */
+- (void)update&lt;#Option#&gt;ViewWithModel:(&lt;#Option#&gt;Model *)model {
+    
+    &lt;#_model = model;#&gt;
+    
+    &lt;#data#&gt;
+}
+- (void)update&lt;#Option#&gt;ViewWithModel:(NSArray *)models {
+    
+    &lt;#_model = model;#&gt;
+    
+    &lt;#data#&gt;
+}
+
+
+#pragma mark - ============== 接口 ==============
+
+
+/**
+ 接口
+ 
+ @param title 输入的数据
+ @return 返回成功与否
+ */
+-(BOOL)add&lt;#AanswerButtonName#&gt;:(NSString *) title{
+    
+    &lt;#data#&gt;
+}
+
+
+#pragma mark - ============== 方法 ==============
+#pragma mark - ============== 代理 ==============
+
+@end</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>9DF14968-6C7F-4D0A-99DB-C514AE59F413</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>view</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>view模型</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mymodel</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@interface &lt;#class name#&gt; : NSObject
+
+@property(nonatomic,copy)NSString * &lt;#key#&gt;;
+@property(nonatomic,copy)NSArray * &lt;#name#&gt;s;//列表里有数组
+
+- (instancetype)initWithDict:(NSDictionary *)dict;
++ (instancetype)&lt;#name#&gt;WithDict:(NSDictionary *)dict;
+
++ (NSArray *)&lt;#name#&gt;sWithPath:(NSString *)path;
++ (NSArray *)&lt;#name#&gt;sWithArray:(NSArray *)array;
+
+
+@end
+
+@implementation &lt;#class#&gt;
+
+- (instancetype)initWithDict:(NSDictionary *)dict
+{
+    self = [super init];
+    if (self) {
+        [self setValuesForKeysWithDictionary:dict];
+        _&lt;#name#&gt;s = [&lt;#Class name#&gt; &lt;#name#&gt;sWithArray:_&lt;#name#&gt;s];//判断属性里有无数组
+    }
+    return self;
+}
+
++ (instancetype)&lt;#name#&gt;WithDict:(NSDictionary *)dict
+{
+    return [[self alloc] initWithDict:dict];
+}
+
++ (NSArray *)&lt;#name#&gt;sWithPath:(NSString *)path
+{
+    NSArray *array = [NSArray arrayWithContentsOfFile:path];
+    
+    NSMutableArray *arrayM = [NSMutableArray array];
+    for (NSDictionary *dict in array) {
+        [arrayM addObject:[self &lt;#name#&gt;WithDict:dict]];
+    }
+    
+    return arrayM;
+}
+
++(NSArray *)&lt;#name#&gt;sWithArray:(NSArray *)array
+{
+    NSMutableArray *arrayM = [NSMutableArray array];
+    for (NSDictionary *dict in array) {
+        [arrayM addObject:[self &lt;#name#&gt;WithDict:dict]];
+    }
+    
+    return arrayM;
+}
+
+@end</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>AE267499-3A22-4809-B512-1CAAC9FF26CF</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>model</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>数据模型</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

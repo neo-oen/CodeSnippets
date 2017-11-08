@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myScrollViewDraggingOptimize</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>/**
+ *  当用户开始拖拽表格时调用
+ */
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    // 暂停下载
+    [self.&lt;#queue#&gt; setSuspended:YES];
+}
+
+/**
+ *  当用户停止拖拽表格时调用
+ */
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    // 恢复下载
+    [self.&lt;#queue#&gt; setSuspended:NO];
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>1ACCF9CC-16D3-4EBE-ABD9-E8FFAEF23442</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>拖拽优化</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>ScrollViewDraggingOptimize</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
