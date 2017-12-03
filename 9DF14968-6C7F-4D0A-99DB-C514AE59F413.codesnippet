@@ -76,7 +76,7 @@ typedef &lt;#void#&gt; (^&lt;#AnswerClick#&gt;Action)(&lt;#NSString * str#&gt;);
 }
 - (void)update&lt;#Option#&gt;ViewWithModel:(NSArray *)models {
     
-    &lt;#_model = model;#&gt;
+    &lt;#_models = models;#&gt;
     
     &lt;#data#&gt;
 }
