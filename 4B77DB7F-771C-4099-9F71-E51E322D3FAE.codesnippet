@@ -25,9 +25,9 @@
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>清除缓存内容</string>
-	<key>IDECodeSnippetTitle</key>
 	<string>cancelMemory</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>清除缓存内容</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
