@@ -13,45 +13,49 @@
 typedef NS_ENUM(NSUInteger, &lt;#MyEnum#&gt;) {
     &lt;#MyEnumValueA#&gt;,
 };
+typedef NS_ENUM(NSUInteger, DicType) {
+    singleDic,
+    doubleDic
+};
 
 @property(nonatomic,copy)NSString * &lt;#key#&gt;;
 @property(nonatomic,copy)NSArray * &lt;#name#&gt;s;//列表里有数组
-@property(nonatomic,assign)&lt;#Type type#&gt;;//针对字典里有状态-nsnumber型
+@property(nonatomic,strong)NSNumber * &lt;#number#&gt;;
 @property(nonatomic,assign,getter =is&lt;#name#&gt;Hiddened)BOOL &lt;#name#&gt;Hidden;//这样的值主要是由外界设置上的，不由字典里获取
 
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
 + (instancetype)&lt;#name#&gt;WithDict:(NSDictionary *)dict;
 
-+ (NSArray *)&lt;#name#&gt;sWithPath:(NSString *)path;
-+ (NSArray *)&lt;#name#&gt;sWithPath:(NSString *)path&lt;#andDicType:(dicType)type#&gt;;//判断字典类型判断
+
++ (NSArray *)&lt;#name#&gt;sWithPath:(NSString *)path AndDicType:(DicType)type;//判断字典类型判断
 + (NSArray *)&lt;#name#&gt;sWithArray:(NSArray *)array;
 
 
 //frame所需的属性（这个可以做输出，也可以当限制）
 
-@property(nonatomic,assign,readonly)CGFloat &lt;#xxx#&gt;Width;
-@property(nonatomic,assign,readonly)CGFloat  &lt;#xxx#&gt;Height;
+@property(nonatomic,assign,readonly)CGFloat &lt;#herderFootercell#&gt;Width;
+@property(nonatomic,assign,readonly)CGFloat  &lt;#herderFootercell#&gt;Height;
 
 @property(nonatomic,assign,readonly)CGRect  &lt;#xxx#&gt;Frame;
 
--(void)setFrameWithRange:(CGPoint)widthHeight;
+-(void)setFrameWithRange:(CGSize)size;
+-(void)setFrameExtendWithRange:(CGSize)size;
 //连带初始化frame
 
-- (instancetype)initWithDict:(NSDictionary *)dict AndRange:(CGPoint)widthHeight;
-+ (instancetype)&lt;#name#&gt;WithDict:(NSDictionary *)dict AndRange:(CGPoint)widthHeight;
+- (instancetype)initWithDict:(NSDictionary *)dict AndRange:(CGSize)size;
++ (instancetype)&lt;#name#&gt;WithDict:(NSDictionary *)dict AndRange:(CGSize)size;
 
-+ (NSArray *)&lt;#name#&gt;sWithPath:(NSString *)path AndRange:(CGPoint)widthHeight;
-+ (NSArray *)&lt;#name#&gt;sWithPath:(NSString *)path&lt;#andDicType:(dicType)type#&gt; AndRange:(CGPoint)widthHeight;
-+ (NSArray *)&lt;#name#&gt;sWithArray:(NSArray *)array AndRange:(CGPoint)widthHeight;
++ (NSArray *)&lt;#name#&gt;sWithPath:(NSString *)path AndDicType:(DicType)type AndRange:(CGSize)size;
++ (NSArray *)&lt;#name#&gt;sWithArray:(NSArray *)array AndRange:(CGSize)size;
 
 @end
 
 @implementation &lt;#class#&gt;
 
-#pragma mark - ============== 实现方法 ==============
+#pragma mark - ============== 初始化 ==============
 
-#warning 由外界数据，根据数组上下关系来设置的{
+#warning 由外界数据，根据数组上下关系来设置的记得补齐，h文件的。{
 //针对单个的设置这个需要自己先通过上下数组进行判断赋值hidden
 - (instancetype)initWithDict:(NSDictionary *)dict and&lt;#name#&gt;Hidden:(BOOL)&lt;#name#&gt;Hidden
 {
@@ -81,7 +85,7 @@ typedef NS_ENUM(NSUInteger, &lt;#MyEnum#&gt;) {
     return arrayM;
 }
 
-#warning 由外界数据，根据数组上下关系来设置的}
+#warning 由外界数据，根据数组上下关系来设置的记得补齐，h文件的。}
 
 - (instancetype)initWithDict:(NSDictionary *)dict
 {
@@ -98,38 +102,26 @@ typedef NS_ENUM(NSUInteger, &lt;#MyEnum#&gt;) {
     return [[self alloc] initWithDict:dict];
 }
 
-+ (NSArray *)&lt;#name#&gt;sWithPath:(NSString *)path
+
++ (NSArray *)&lt;#name#&gt;sWithPath:(NSString *)path AndDicType:(DicType)type
 {
     NSArray *array = [NSArray arrayWithContentsOfFile:path];
-    
     NSMutableArray *arrayM = [NSMutableArray array];
-    for (NSDictionary *dict in array) {
-        [arrayM addObject:[self &lt;#name#&gt;WithDict:dict]];
+    if (type) {
+        for (NSDictionary *dict in array) {
+            
+            [arrayM addObject:[self &lt;#name#&gt;WithDict:dict]];
+        }
+        return arrayM;
+        
+    }else{
+        
+        &lt;#Name#&gt;Model * &lt;#name#&gt;Model = [[self alloc]init];
+        &lt;#name#&gt;Model.&lt;#array#&gt;s = [&lt;#Name1#&gt;Model &lt;#name#&gt;sWithArray:array];
+        return @[&lt;#name#&gt;Model];
     }
     
-    return arrayM;
 }
-
-/*//需要时打开
- + (NSArray *)&lt;#name#&gt;sWithPath:(NSString *)path andDicType:(dicType)type
- {
- NSArray *array = [NSArray arrayWithContentsOfFile:path];
- NSMutableArray *arrayM = [NSMutableArray array];
- if (type) {
- for (NSDictionary *dict in array) {
- 
- [arrayM addObject:[self &lt;#name#&gt;WithDict:dict]];
- }
- return arrayM;
- 
- }else{
- 
- &lt;#Name#&gt;Model * &lt;#name#&gt;Model = [[self alloc]init];
- &lt;#name#&gt;Model.&lt;#array#&gt;s = [&lt;#Name1#&gt;Model &lt;#name#&gt;sWithArray:array];
- return @[&lt;#name#&gt;Model];
- }
- 
- }*/
 
 
 +(NSArray *)&lt;#name#&gt;sWithArray:(NSArray *)array
@@ -144,73 +136,88 @@ typedef NS_ENUM(NSUInteger, &lt;#MyEnum#&gt;) {
 
 //连带初始化frame
 
-- (instancetype)initWithDict:(NSDictionary *)dict AndRange:(CGPoint)widthHeight{
-  
-    self = [self initWithDict:dict];
-    [self setFrameWithRange:widthHeight];
-    return self;
 
-}
-+ (instancetype)&lt;#name#&gt;WithDict:(NSDictionary *)dict AndRange:(CGPoint)widthHeight{
+- (instancetype)initWithDict:(NSDictionary *)dict AndRange:(CGSize)size{
     
-    return [[self alloc]initWithDict:dict AndRange:widthHeight];
+    self = [self initWithDict:dict];
+    [self setFrameExtendWithRange:size];
+    return self;
+    
+}
++ (instancetype)&lt;#name#&gt;WithDict:(NSDictionary *)dict AndRange:(CGSize)size{
+    
+    return [[self alloc]initWithDict:dict AndRange:size];
 }
 
-+ (NSArray *)&lt;#name#&gt;sWithPath:(NSString *)path AndRange:(CGPoint)widthHeight{
-
++ (NSArray *)&lt;#name#&gt;sWithPath:(NSString *)path AndRange:(CGSize)size{
+    
     NSArray *array = [NSArray arrayWithContentsOfFile:path];
-
+    
     NSMutableArray *arrayM = [NSMutableArray array];
     for (NSDictionary *dict in array) {
-        [arrayM addObject:[self &lt;#name#&gt;WithDict:dict AndRange:widthHeight]];
-}
-
-return arrayM;
-}
-
-/*//需要时打开
- + (NSArray *)&lt;#name#&gt;sWithPath:(NSString *)path&lt;#andDicType:(dicType)type#&gt; AndRange:(CGPoint)widthHeight{
- 
- NSArray *array = [NSArray arrayWithContentsOfFile:path];
- NSMutableArray *arrayM = [NSMutableArray array];
- if (type) {
- for (NSDictionary *dict in array) {
- 
- [arrayM addObject:[self &lt;#name#&gt;WithDict:dict AndRange:widthHeight]];
- }
- return arrayM;
- 
- }else{
- 
- &lt;#Name#&gt;Model * &lt;#name#&gt;Model = [[self alloc]init];
- &lt;#name#&gt;Model.&lt;#array#&gt;s = [&lt;#Name1#&gt;Model &lt;#name#&gt;sWithArray:array];
- return @[&lt;#name#&gt;Model];
- 
- }
- */
-
-+ (NSArray *)&lt;#name#&gt;sWithArray:(NSArray *)array AndRange:(CGPoint)widthHeight{
-    NSMutableArray *arrayM = [NSMutableArray array];
-    for (NSDictionary *dict in array) {
-        [arrayM addObject:[self &lt;#name#&gt;WithDict:dict AndRange:widthHeight]];
+        [arrayM addObject:[self &lt;#name#&gt;WithDict:dict AndRange:size]];
     }
     
     return arrayM;
 }
 
 
-
-
-#pragma mark - ============== 方法 ==============
-
-
--(void)setFrameWithRange:(CGPoint)widthHeight{
++ (NSArray *)&lt;#name#&gt;sWithPath:(NSString *)path AndDicType:(DicType)type AndRange:(CGSize)size{
     
-    _&lt;#name#&gt;Width = widthHeight.x;
-    _&lt;#name#&gt;Height = widthHeight.y;
+    NSArray *array = [NSArray arrayWithContentsOfFile:path];
+    NSMutableArray *arrayM = [NSMutableArray array];
+    if (type) {
+        for (NSDictionary *dict in array) {
+            
+            [arrayM addObject:[self &lt;#name#&gt;WithDict:dict AndRange:size]];
+        }
+        return arrayM;
+        
+    }else{
+        
+        &lt;#Name#&gt;Model * &lt;#name#&gt;Model = [[self alloc]init];
+        &lt;#name#&gt;Model.&lt;#array#&gt;s = [&lt;#Name1#&gt;Model &lt;#name#&gt;sWithArray:array AndRange:(CGSize)size];
+        return @[&lt;#name#&gt;Model];
+        
+    }
+}
+
+
++ (NSArray *)&lt;#name#&gt;sWithArray:(NSArray *)array AndRange:(CGSize)size{
+    NSMutableArray *arrayM = [NSMutableArray array];
+    for (NSDictionary *dict in array) {
+        [arrayM addObject:[self &lt;#name#&gt;WithDict:dict AndRange:size]];
+    }
+    
+    return arrayM;
+}
+
+
+#pragma mark - ============== 接口 ==============
+
+-(void)setFrameWithRange:(CGSize)size{
+    
+    _&lt;#name#&gt;Width = size.width;
+    _&lt;#name#&gt;Height = size.height;
     [self getFrame];
     
 }
+
+-(void)setFrameExtendWithRange:(CGSize)size{
+    for (CellModel * model in self.cells) {
+        [model setFrameWithRange:size];
+    }
+    [self setFrameWithRange:size];
+    
+}
+
+
+-(NSString *)description{
+    return [NSString stringWithFormat:@"&lt;%@:        %p&gt; {&lt;#属性#&gt;=%@,&lt;#属性#&gt;=%@,XXXFrame=%@}",self.class,self,self.&lt;#属性#&gt;,self.&lt;#属性#&gt;,NSStringFromCGSize(&lt;#xx#&gt;)];
+}
+#pragma mark - ============== 方法 ==============
+
+
 
 -(void)getFrame{
     
