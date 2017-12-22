@@ -9,7 +9,8 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@interface &lt;#class name#&gt; : NSObject
+	<string>
+@interface &lt;#class name#&gt; : NSObject
 typedef NS_ENUM(NSUInteger, &lt;#MyEnum#&gt;) {
     &lt;#MyEnumValueA#&gt;,
 };
@@ -116,10 +117,10 @@ typedef NS_ENUM(NSUInteger, DicType) {
         
     }else{
         
-        &lt;#Name#&gt;Model * &lt;#name#&gt;Model = [[self alloc]init];
-        &lt;#name#&gt;Model.&lt;#array#&gt;s = [&lt;#Name1#&gt;Model &lt;#name#&gt;sWithArray:array];
-        return @[&lt;#name#&gt;Model];
-    }
+        &lt;#NameModel#&gt; * &lt;#nameModel#&gt; = [[self alloc]init];
+        &lt;#nameModel#&gt;.&lt;#array#&gt;s = [&lt;#Name1Model#&gt; &lt;#name#&gt;sWithArray:array];
+        return @[&lt;#nameModel#&gt;];
+    }//如果是最后一层就删除。且将return 往下一层挪
     
 }
 
@@ -140,7 +141,7 @@ typedef NS_ENUM(NSUInteger, DicType) {
 - (instancetype)initWithDict:(NSDictionary *)dict AndRange:(CGSize)size{
     
     self = [self initWithDict:dict];
-    [self setFrameExtendWithRange:size];
+    [self setFrame&lt;#Extend#&gt;WithRange:size];//看要不要扩展
     return self;
     
 }
@@ -175,11 +176,12 @@ typedef NS_ENUM(NSUInteger, DicType) {
         
     }else{
         
-        &lt;#Name#&gt;Model * &lt;#name#&gt;Model = [[self alloc]init];
-        &lt;#name#&gt;Model.&lt;#array#&gt;s = [&lt;#Name1#&gt;Model &lt;#name#&gt;sWithArray:array AndRange:(CGSize)size];
-        return @[&lt;#name#&gt;Model];
+        &lt;#NameModel#&gt; * &lt;#nameModel#&gt; = [[self alloc]init];
+        &lt;#nameModel#&gt;.&lt;#array#&gt;s = [&lt;#Name1Model#&gt; &lt;#name#&gt;sWithArray:array AndRange:size];
+        return @[&lt;#nameModel#&gt;];
         
-    }
+        
+    }//如果是最后一层就删除。且将return 往下一层挪
 }
 
 
@@ -213,7 +215,7 @@ typedef NS_ENUM(NSUInteger, DicType) {
 
 
 -(NSString *)description{
-    return [NSString stringWithFormat:@"&lt;%@:        %p&gt; {&lt;#属性#&gt;=%@,&lt;#属性#&gt;=%@,XXXFrame=%@}",self.class,self,self.&lt;#属性#&gt;,self.&lt;#属性#&gt;,NSStringFromCGSize(&lt;#xx#&gt;)];
+    return [NSString stringWithFormat:@"&lt;%@:        %p&gt; {&lt;#属性#&gt;=%@,&lt;#属性#&gt;=%@,XXXFrame=%@}",self.class,self,self.&lt;#属性#&gt;,self.&lt;#属性#&gt;,NSStringFromCG&lt;#Size#&gt;(&lt;#xx#&gt;)];
 }
 #pragma mark - ============== 方法 ==============
 
@@ -223,15 +225,14 @@ typedef NS_ENUM(NSUInteger, DicType) {
     
     
     if (_&lt;#name#&gt;Width&amp;&amp; _&lt;#name#&gt;Height) {
-        //要输出frame和range
+        //要输出frame和range boundingRectWithSize
     }
     
 }
 
 
 
-@end
-</string>
+@end</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>855C71E4-22D6-4E5E-9788-F8C7EA88C211</string>
 	<key>IDECodeSnippetLanguage</key>
