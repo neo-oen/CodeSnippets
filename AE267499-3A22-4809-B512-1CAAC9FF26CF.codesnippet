@@ -30,7 +30,7 @@
     self = [super init];
     if (self) {
         [self setValuesForKeysWithDictionary:dict];
-        _&lt;#name#&gt;s = [&lt;#Class name#&gt; &lt;#name#&gt;sWithArray:_&lt;#name#&gt;s];//判断属性里有无数组
+        _&lt;#name#&gt;s = [&lt;#Class name#&gt; &lt;#name#&gt;sWithArray:_&lt;#name#&gt;s];//列表里有数组且里面包裹着字典
     }
     return self;
 }
