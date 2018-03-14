@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>mysingle</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>// 防止被继承
+__attribute__((objc_subclassing_restricted))
+@interface &lt;#SingleObject#&gt; : NSObject
+
+/**
+ 单例类方法
+ @return 返回一个共享对象
+ */
++ (instancetype)shared&lt;#Instance#&gt;;
+
+// 姓名
+@property (nonatomic, copy) NSString* name;
+
+@end
+
+@implementation &lt;#SingleObject#&gt;
+
+static &lt;#SingleObject* kSingleObject = nil;
+
+/** 单例类方法 */
++ (instancetype)shared&lt;#Instance#&gt; {
+    static dispatch_once_t onceToken;
+    dispatch_once(&amp;onceToken, ^{
+        kSingleObject = [[super allocWithZone:NULL] init];
+    });
+    
+    return kSingleObject;
+}
+
+// 重写创建对象空间的方法
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
+    // 直接调用单例的创建方法
+    return [self shared&lt;#Instance#&gt;];
+}
+
+-(id)copyWithZone:(NSZone *)zone{
+    return self;
+}
+
+// 重写copy方法
+- (id)copy {
+    return kSingleObject;
+}
+
+// 重写 mutableCopy 方法
+- (id)mutableCopy {
+    return kSingleObject;
+}
+
+
+
+#pragma mark - 支持MRC
+#if !__has_feature(objc_arc)
+- (id)retain {
+    return self;
+}
+
+- (NSUInteger)retainCount {
+    return 1;
+}
+
+- (id)autorelease {
+    return self;
+}
+
+- (oneway void)release {
+}
+#endif
+
+@end
+
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>0D244B14-E16D-456D-98DB-E75387406CC3</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>单例标准</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Single</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
