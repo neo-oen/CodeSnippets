@@ -3,27 +3,44 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>#p1</string>
+	<string>mySimpSingle</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>pragma mark - ============== 懒加载 ==============
-#pragma mark - ============== 初始化 ==============
-#pragma mark - ============== 接口 ==============
-#pragma mark - ============== 方法 ==============
-#pragma mark - ============== UI界面 ==============
-#pragma mark - ============== 代理 ==============
-#pragma mark - ============== 设置 ==============</string>
+	<string>// 防止被继承
+__attribute__((objc_subclassing_restricted))
+@interface &lt;#className#&gt; : NSObject
+
+/**
+ 单例类方法
+ @return 返回一个共享对象
+ */
+SINGLETON_FOR_HEADER(&lt;#className#&gt;)
+
+// 姓名
+@property (nonatomic, copy) NSString* name;
+
+@end
+
+@implementation &lt;#className#&gt;
+
+
+
+/** 简单单例类方法，不限制你自己实例化，不影响原static对象 */
+SINGLETON_FOR_CLASS(&lt;#className#&gt;)
+
+
+@end</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>72C1978E-113D-4327-AE65-5353FE7BC790</string>
+	<string>8E6123B6-2E6C-478B-A3CA-1C276A63EE83</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>全注释</string>
+	<string>简单单例</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Pragma mark</string>
+	<string>simpleSingle</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>
