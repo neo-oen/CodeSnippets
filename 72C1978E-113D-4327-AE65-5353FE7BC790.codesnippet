@@ -10,6 +10,7 @@
 	</array>
 	<key>IDECodeSnippetContents</key>
 	<string>pragma mark - ============== 懒加载 ==============
+#pragma mark - ============== SETTER ==============
 #pragma mark - ============== 初始化 ==============
 #pragma mark - ============== 接口 ==============
 #pragma mark - ============== 方法 ==============
