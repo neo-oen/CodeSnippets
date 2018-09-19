@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>markD</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>    //MARK: mark - ============== 懒加载 ==============
+    //MARK: mark - ============== SETTER ==============
+    //MARK: mark - ============== 初始化 ==============
+    //MARK: mark - ============== 接口 ==============
+    //MARK: mark - ============== 方法 ==============
+    //MARK: mark - ============== UI界面 ==============
+    //MARK: mark - ============== 代理 ==============
+    //MARK: mark - ============== 设置 ==============</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>58D72AA5-E3CA-4BA8-9314-F7F57BACF3F6</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetSummary</key>
+	<string>多注释</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Mark注释(全)</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>0</integer>
+</dict>
+</plist>
