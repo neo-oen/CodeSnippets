@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>markD</string>
+	<string>vcDmk</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
@@ -14,17 +14,31 @@
     //MARK: mark - ============== 初始化 ==============
     //MARK: mark - ============== 接口 ==============
     //MARK: mark - ============== 方法 ==============
+    private func setNavigationTableBar(){}
+    private func updateNavigationTableBar(){}
+    private func setInterface(){}
+    private func updateInterface(){}
     //MARK: mark - ============== UI界面 ==============
     //MARK: mark - ============== 代理 ==============
-    //MARK: mark - ============== 设置 ==============</string>
+    //MARK: mark - ============== 设置 ==============
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.updateNavigationTableBar()
+        self.updateInterface()
+        self.view.layoutSubviews()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.updateNavigationTableBar()
+        self.setInterface()
+    }</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>58D72AA5-E3CA-4BA8-9314-F7F57BACF3F6</string>
+	<string>C935C3D0-DE92-4894-AD10-D29BCA3D7043</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Swift</string>
-	<key>IDECodeSnippetSummary</key>
-	<string>多注释</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Mark注释(全)</string>
+	<string>VC结构+注释</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

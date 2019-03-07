@@ -9,7 +9,7 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>@property(nonatomic,copy)NSString * &lt;#string#&gt;;</string>
+	<string>@property (nonatomic, copy) NSString *&lt;#string#&gt;;</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>9E848FC6-7FE2-4BA2-B2E8-ABB534FD32F2</string>
 	<key>IDECodeSnippetLanguage</key>

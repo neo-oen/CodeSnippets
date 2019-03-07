@@ -40,7 +40,7 @@ typedef NS_ENUM(NSUInteger, DicType) {
 
 @property(nonatomic,assign,readonly)CGRect  &lt;#xxx#&gt;Frame;
 
--(void)setFrameWithRange:(CGSize)size;
+- (void)setFrameWithRange:(CGSize)size;
 -(void)setFrameExtendWithRange:(CGSize)size;
 //连带初始化frame
 
@@ -69,7 +69,7 @@ typedef NS_ENUM(NSUInteger, DicType) {
 }
 
 //针对数组集体设置hidden
-+(NSArray *)&lt;#name#&gt;sWithArray:(NSArray *)array
++ (NSArray *)&lt;#name#&gt;sWithArray:(NSArray *)array
 {
     NSMutableArray *arrayM = [NSMutableArray array];
     for (int i=0; i&lt;array.count; i++) {
@@ -125,7 +125,7 @@ typedef NS_ENUM(NSUInteger, DicType) {
 }
 
 
-+(NSArray *)&lt;#name#&gt;sWithArray:(NSArray *)array
++ (NSArray *)&lt;#name#&gt;sWithArray:(NSArray *)array
 {
     NSMutableArray *arrayM = [NSMutableArray array];
     for (NSDictionary *dict in array) {
@@ -197,7 +197,7 @@ typedef NS_ENUM(NSUInteger, DicType) {
 
 #pragma mark - ============== 接口 ==============
 
--(void)setFrameWithRange:(CGSize)size{
+- (void)setFrameWithRange:(CGSize)size{
     
     _&lt;#name#&gt;Width = size.width;
     _&lt;#name#&gt;Height = size.height;
@@ -214,14 +214,14 @@ typedef NS_ENUM(NSUInteger, DicType) {
 }
 
 
--(NSString *)description{
+- (NSString *)description{
     return [NSString stringWithFormat:@"&lt;%@:        %p&gt; {&lt;#属性#&gt;=%@,&lt;#属性#&gt;=%@,XXXFrame=%@}",self.class,self,self.&lt;#属性#&gt;,self.&lt;#属性#&gt;,NSStringFromCG&lt;#Size#&gt;(&lt;#xx#&gt;)];
 }
 #pragma mark - ============== 方法 ==============
 
 
 
--(void)getFrame{
+- (void)getFrame{
     
     
     if (_&lt;#name#&gt;Width&amp;&amp; _&lt;#name#&gt;Height) {

@@ -52,7 +52,7 @@
     return arrayM;
 }
 
-+(NSArray *)&lt;#name#&gt;sWithArray:(NSArray *)array
++ (NSArray *)&lt;#name#&gt;sWithArray:(NSArray *)array
 {
     NSMutableArray *arrayM = [NSMutableArray array];
     for (NSDictionary *dict in array) {

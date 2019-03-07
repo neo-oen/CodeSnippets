@@ -11,7 +11,7 @@
 	<key>IDECodeSnippetContents</key>
 	<string>typedef &lt;#void#&gt; (^&lt;#AnswerClick#&gt;Action)(&lt;#NSString * str#&gt;);
 
-@property(nonatomic,copy)&lt;#AnswerClick#&gt;Action &lt;#answer#&gt;CA ;
+@property (nonatomic, copy) &lt;#AnswerClick#&gt;Action &lt;#answer#&gt;CA ;
 
 if (self.&lt;#answer#&gt;CA) {
     
