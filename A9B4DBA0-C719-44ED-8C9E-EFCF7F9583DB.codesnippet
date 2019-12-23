@@ -3,21 +3,22 @@
 <plist version="1.0">
 <dict>
 	<key>IDECodeSnippetCompletionPrefix</key>
-	<string>mark</string>
+	<string>@weakify</string>
 	<key>IDECodeSnippetCompletionScopes</key>
 	<array>
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string> //MARK: -  &lt;#注释的内容#&gt; </string>
+	<string>@weakify(&lt;#self#&gt;);
+</string>
 	<key>IDECodeSnippetIdentifier</key>
-	<string>F9B4245B-684C-4C7E-8BEB-760166F45064</string>
+	<string>A9B4DBA0-C719-44ED-8C9E-EFCF7F9583DB</string>
 	<key>IDECodeSnippetLanguage</key>
-	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<string>Xcode.SourceCodeLanguage.Generic</string>
 	<key>IDECodeSnippetSummary</key>
-	<string>单注释</string>
+	<string>weak对象</string>
 	<key>IDECodeSnippetTitle</key>
-	<string>Mark注释</string>
+	<string>weakify</string>
 	<key>IDECodeSnippetUserSnippet</key>
 	<true/>
 	<key>IDECodeSnippetVersion</key>

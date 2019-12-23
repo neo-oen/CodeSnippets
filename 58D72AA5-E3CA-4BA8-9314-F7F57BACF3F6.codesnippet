@@ -9,14 +9,14 @@
 		<string>All</string>
 	</array>
 	<key>IDECodeSnippetContents</key>
-	<string>    //MARK: mark - ============== 懒加载 ==============
-    //MARK: mark - ============== SETTER ==============
-    //MARK: mark - ============== 初始化 ==============
-    //MARK: mark - ============== 接口 ==============
-    //MARK: mark - ============== 方法 ==============
-    //MARK: mark - ============== UI界面 ==============
-    //MARK: mark - ============== 代理 ==============
-    //MARK: mark - ============== 设置 ==============</string>
+	<string>    //MARK:  -  懒加载
+    //MARK:  -  SETTER
+    //MARK:  -  初始化
+    //MARK:  -  接口
+    //MARK:  -  方法
+    //MARK:  -  UI界面
+    //MARK:  -  代理
+    //MARK:  -  设置</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>58D72AA5-E3CA-4BA8-9314-F7F57BACF3F6</string>
 	<key>IDECodeSnippetLanguage</key>
