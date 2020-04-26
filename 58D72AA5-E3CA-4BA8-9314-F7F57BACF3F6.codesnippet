@@ -19,6 +19,12 @@
     func setNaviTabInterface()  {
         
     }
+    func updateInterface()  {
+        
+    }
+    func updateNavTabInterface()  {
+        
+    }
     //MARK:  -  代理
     //MARK:  -  设置
     override func viewDidLoad() {
@@ -26,6 +32,11 @@
         setInterface()
         setNaviTabInterface()
         
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateInterface()
+        updateNavTabInterface()
     }</string>
 	<key>IDECodeSnippetIdentifier</key>
 	<string>58D72AA5-E3CA-4BA8-9314-F7F57BACF3F6</string>
