@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>myScrollView</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>All</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>@property (nonatomic, strong) UIScrollView *bgScrollView;
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self.view addSubview:self.bgScrollView];
+    [self.bgScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_offset(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
+    UIView *container = [UIView new];
+    [self.bgScrollView addSubview:container];
+    [container mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_offset(UIEdgeInsetsMake(15, 15, 0, -15));
+        make.width.equalTo(self.bgScrollView).offset(-30); //此处必填 - 关键点
+    }];
+    
+
+}
+
+- (UIScrollView *)bgScrollView
+{
+    if(!_bgScrollView) {
+        _bgScrollView = ({
+            UIScrollView * scrollView = [[UIScrollView  alloc] init];
+            scrollView.showsHorizontalScrollIndicator = NO;//不显示水平拖地的条
+            scrollView.showsVerticalScrollIndicator = NO;//不显示垂直拖动的条
+            scrollView.scrollEnabled = YES;
+            scrollView;
+        });
+    }
+    return _bgScrollView;
+}</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>B427FA4C-4245-4A5F-90AB-882401AFBA98</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
+	<key>IDECodeSnippetTitle</key>
+	<string>创建自动布局的scrollView</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

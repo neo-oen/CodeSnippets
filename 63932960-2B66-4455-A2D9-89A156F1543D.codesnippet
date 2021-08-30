@@ -25,6 +25,8 @@
 	<string>63932960-2B66-4455-A2D9-89A156F1543D</string>
 	<key>IDECodeSnippetLanguage</key>
 	<string>Xcode.SourceCodeLanguage.Objective-C</string>
+	<key>IDECodeSnippetSummary</key>
+	<string></string>
 	<key>IDECodeSnippetTitle</key>
 	<string>懒加载</string>
 	<key>IDECodeSnippetUserSnippet</key>
