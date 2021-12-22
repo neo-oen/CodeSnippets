@@ -13,10 +13,10 @@
 {
     if(!_&lt;#name#&gt;) {
         _&lt;#name#&gt; = ({
-            &lt;#type#&gt; * &lt;#name#&gt; = [[&lt;#type#&gt; alloc] init];
+            &lt;#type#&gt; * ob = [[&lt;#type#&gt; alloc] init];
             
             
-            &lt;#name#&gt;;
+            ob;
         });
     }
     return _&lt;#name#&gt;;
